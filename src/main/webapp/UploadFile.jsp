@@ -89,6 +89,7 @@
       out.println("<title>JSP File upload</title>");
       out.println("</head>");
       out.println("<body>");
+      out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\">");
       String caption = "Generic Caption";
       while ( i.hasNext () )
       {
