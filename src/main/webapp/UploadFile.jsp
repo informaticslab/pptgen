@@ -113,11 +113,12 @@
           out.println("Uploaded Filename: " + filePath +
                   fileName + "<br>");
           byte[] data;
-          data = IOUtils.toByteArray(new FileInputStream(file));
+          FileInputStream fis = new FileInputStream(file);
+          data = IOUtils.toByteArray(fis);
           int pictureIndex = ppt.addPicture(data, XSLFPictureData.PICTURE_TYPE_PNG);
           slide1.createPicture(pictureIndex);
           out.println("added picture <br>");
-
+          fis.close();
         }
         else if (fi.isFormField()) {
           // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
