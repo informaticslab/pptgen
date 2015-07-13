@@ -12,4 +12,11 @@
         </param-value>
         <description>Location to store uploaded file</description>
     </context-param>
+    <context-param>
+        <param-name>image-home</param-name>
+        <param-value>
+            ../data/
+        </param-value>
+        <description>Location to store uploaded file</description>
+    </context-param>
 </web-app>
