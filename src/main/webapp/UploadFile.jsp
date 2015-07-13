@@ -66,7 +66,7 @@
   // Verify the content type
 
   String contentType = request.getContentType();
-  if ((contentType.indexOf("multipart/form-data") >= 0)) {
+  if (contentType != null && (contentType.indexOf("multipart/form-data") >= 0)) {
 
 
 
@@ -120,6 +120,13 @@
     <h1>Image check</h1>
     <h2> Please confirm the image you've uploaded</h2>
     <img src="<%=imagePath+fileName%>"/>
+    <h2> Please enter an image caption to get your PPT file</h2>
+    <form action="UploadCaption.jsp" method="post">
+      <input type="hidden" name="file" value="<%=fileName%>" />
+      Caption: <input type="text" name="caption" value ="Caption"/>
+      <br />
+      <input type="submit" value="Generate PPTX" />
+    </form>
 
       <%
           //byte[] data;
@@ -163,7 +170,7 @@
     <title>Image Check</title>
     </head>
     <body>
-    <p>No file uploaded</p>
+    <p>No file uploaded. Please try again from <a href="<%=imagePath%>/pptgen">the beginning.</a></p>
     </body>
     </html>
     <%
