@@ -26,6 +26,7 @@
   ServletContext context = pageContext.getServletContext();
   String filePath = context.getInitParameter("file-upload");
   String imagePath = context.getInitParameter("image-home");
+  String tempPath = context.getInitParameter("file-upload-temp");
 
   /* START PPT INTEGRATION */
 //  XMLSlideShow ppt = new XMLSlideShow();
@@ -75,7 +76,7 @@
     // maximum size that will be stored in memory
     factory.setSizeThreshold(maxMemSize);
     // Location to save data that is larger than maxMemSize.
-    factory.setRepository(new File("/Users/PMW3/temp"));
+    factory.setRepository(new File(tempPath));
 
     // Create a new file upload handler
     ServletFileUpload upload = new ServletFileUpload(factory);
