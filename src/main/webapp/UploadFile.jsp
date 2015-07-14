@@ -92,9 +92,12 @@
     <html>
     <head>
     <title>File Preview</title>
+      <link rel="stylesheet" href="custom.css">
     </head>
+
     <body>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <div class="top-nav"><div class="mmwr"><img src="mmwr-logo.png" width="179" height="49"></div><div class="cdc-logo"><img src="cdc.png"></div></div>
+    <div class="container">
     <%
     //  String caption = "Generic Caption";
       while ( i.hasNext () )
@@ -126,7 +129,7 @@
       <input type="hidden" name="file" value="<%=fileName%>" />
       Caption: <input type="text" name="caption" value ="Caption"/>
       <br />
-      <input type="submit" value="Generate PPTX" />
+      <input type="submit" value="Generate PPTX" class="upload-file"/>
     </form>
 
       <%
@@ -159,6 +162,7 @@
       //pptOutput.close();
       //out.println("Slides available At <a href=\"/data/slides.pptx\">slides.pptx</a> <br>");
       %>
+      </div>
       </body>
       </html>
 <%
@@ -169,9 +173,13 @@
     <html>
     <head>
     <title>Image Check</title>
+      <link rel="stylesheet" href="custom.css">
     </head>
     <body>
+    <div class="top-nav"><div class="mmwr"><img src="mmwr-logo.png" width="179" height="49"></div><div class="cdc-logo"><img src="cdc.png"></div></div>
+    <div class="container">
     <p>No file uploaded. Please try again from <a href="<%=imagePath%>/pptgen">the beginning.</a></p>
+    </div>
     </body>
     </html>
     <%
