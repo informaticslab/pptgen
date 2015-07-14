@@ -1,16 +1,24 @@
+<!doctype html>
 <html>
 <head>
-    <title>File Uploading Form</title>
+<title>Untitled Document</title>
+<link rel="stylesheet" href="custom.css">
 </head>
+
 <body>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<h3>Step 1: File Upload:</h3>
-Select a file to upload: <br />
+<div class="top-nav"><div class="mmwr"><img src="mmwr-logo.png" width="179" height="49"></div><div class="cdc-logo"><img src="cdc.png"></div></div>
+<div class="container">
+<h2>Step 1: File Upload</h2>
+<i>Please select a file to upload.</i> <br /><br />
 <form action="UploadFile.jsp" method="post"
       enctype="multipart/form-data">
-    <input type="file" name="file" size="50" />
+    <input type="file" name="file" size="50" class="custom-file-input" />
     <br />
-    <input type="submit" value="Upload File" />
+    <br />
+    <input type="submit" value="Upload File" class="upload-file"/>
 </form>
+</div>
+
+
 </body>
 </html>

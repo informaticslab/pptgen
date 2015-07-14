@@ -31,9 +31,11 @@
     <html>
     <head>
     <title>File Preview</title>
+        <link rel="stylesheet" href="custom.css">
     </head>
     <body>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <div class="top-nav"><div class="mmwr"><img src="mmwr-logo.png" width="179" height="49"></div><div class="cdc-logo"><img src="cdc.png"></div></div>
+    <div class="container">
     <%
     //  String caption = "Generic Caption";
      if(fileName != null)
@@ -87,5 +89,6 @@
     <%
   }
 %>
+        </div>
 </body>
 </html>
