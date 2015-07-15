@@ -28,49 +28,10 @@
   String imagePath = context.getInitParameter("image-home");
   String tempPath = context.getInitParameter("file-upload-temp");
 
-  /* START PPT INTEGRATION */
-//  XMLSlideShow ppt = new XMLSlideShow();
-//
-//  // XSLFSlide#createSlide() with no arguments creates a blank slide
-//	        /*XSLFSlide blankSlide =*/ ppt.createSlide();
-//
-//
-//  XSLFSlideMaster master = ppt.getSlideMasters()[0];
-//
-//  XSLFSlideLayout layout1 = master.getLayout(SlideLayout.TITLE);
-//  XSLFSlide slide1 = ppt.createSlide(layout1) ;
-//  XSLFTextShape[] ph1 = slide1.getPlaceholders();
-//  XSLFTextShape titlePlaceholder1 = ph1[0];
-//  titlePlaceholder1.setText("This is a test");
-//  XSLFTextShape subtitlePlaceholder1 = ph1[1];
-//  subtitlePlaceholder1.setText("this is an image of an alarm clock");
-
-
-
-//  File img = new File(System.getProperty("POI.testdata.path"), "slideshow/clock.jpg");
-//  byte[] data;
-//  try {
-//    data = IOUtils.toByteArray(new FileInputStream(img));
-//
-//    int pictureIndex = ppt.addPicture(data, XSLFPictureData.PICTURE_TYPE_PNG);
-//
-//	        /*XSLFPictureShape shape =*/ slide1.createPicture(pictureIndex);
-//    FileOutputStream out;
-
-//
-//    out = new FileOutputStream("slides.pptx");
-//    ppt.write(out);
-//    out.close();
-
-  /* end PPT integration */
-
   // Verify the content type
 
   String contentType = request.getContentType();
   if (contentType != null && (contentType.indexOf("multipart/form-data") >= 0)) {
-
-
-
 
     DiskFileItemFactory factory = new DiskFileItemFactory();
     // maximum size that will be stored in memory
@@ -96,10 +57,10 @@
     </head>
 
     <body>
-    <div class="top-nav"><div class="mmwr"><img src="mmwr-logo.png" width="179" height="49"></div><div class="cdc-logo"><img src="cdc.png"></div></div>
+    <div class="top-nav"><div class="mmwr"><img src="mmwr-logo.png" width="179" height="49"></div>
+      <div class="cdc-logo"><img src="cdc.png"></div></div>
     <div class="container">
     <%
-    //  String caption = "Generic Caption";
       while ( i.hasNext () )
       {
         FileItem fi = (FileItem)i.next();
@@ -112,8 +73,8 @@
           long sizeInBytes = fi.getSize();
           // Write the file
           if( fileName.lastIndexOf("\\") >= 0 ){
-            file = new File( filePath +
-                    fileName.substring( fileName.lastIndexOf("\\"))) ;
+            fileName = fileName.substring( fileName.lastIndexOf("\\")+1);
+            file = new File( filePath + fileName) ;
           }else{
             file = new File( filePath +
                     fileName.substring(fileName.lastIndexOf("\\")+1)) ;
