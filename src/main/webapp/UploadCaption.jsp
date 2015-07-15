@@ -63,18 +63,18 @@
          int pictureIndex = ppt.addPicture(data, XSLFPictureData.PICTURE_TYPE_PNG);
 
 	        /*XSLFPictureShape shape =*/ slide1.createPicture(pictureIndex);
+           java.util.Date today = new java.util.Date();
          subtitlePlaceholder1.setText(caption);
 
          File pptFile;
-         pptFile = new File(filePath + "slides.pptx");
+         pptFile = new File(filePath + "slides"+today.toString()+".pptx");
          FileOutputStream pptOutput = new FileOutputStream(pptFile);
          ppt.write(pptOutput);
          pptOutput.close();
-         //out.println("Slides available At <a href=\"/data/slides.pptx\">slides.pptx</a> <br>");
          fis.close();
           %>
     <h1>PowerPoint Download</h1>
-    Slides available At <a href="<%=downloadPath%>/slides.pptx">this link</a>. <br>
+    Slides available At <a href="<%=downloadPath + "slides" + today.toString()+".pptx"%>">this link</a>. <br>
       <%
 
         }catch(Exception ex) {
