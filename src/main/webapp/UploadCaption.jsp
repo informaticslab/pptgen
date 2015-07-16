@@ -41,14 +41,13 @@
      if(fileName != null)
      {
        XMLSlideShow ppt = new XMLSlideShow();
-       ppt.createSlide();
        XSLFSlideMaster master = ppt.getSlideMasters()[0];
 
        XSLFSlideLayout layout1 = master.getLayout(SlideLayout.TITLE);
        XSLFSlide slide1 = ppt.createSlide(layout1) ;
        XSLFTextShape[] ph1 = slide1.getPlaceholders();
        XSLFTextShape titlePlaceholder1 = ph1[0];
-       titlePlaceholder1.setText("This is a test");
+       titlePlaceholder1.setText("");
        XSLFTextShape subtitlePlaceholder1 = ph1[1];
        subtitlePlaceholder1.setText("this is an image of an alarm clock");
 
@@ -75,6 +74,7 @@
           %>
     <h2>PowerPoint Download</h2>
     <a href="<%=downloadPath + "slides" + today.toString()+".pptx"%>">Click here</a> to download your slides. <br>
+        Care to generate another file?  <a href="../pptgen/">Start Over.</a>
       <%
 
         }catch(Exception ex) {
@@ -84,7 +84,7 @@
 
 
   }else{ %>
-    <p>No filename or caption detected.  Please try again from <a href="<%=downloadPath%>/pptgen">the beginning</a></p>
+    <p>No filename or caption detected.  Please try again from <a href="../pptgen/">the beginning</a></p>
 
     <%
   }
