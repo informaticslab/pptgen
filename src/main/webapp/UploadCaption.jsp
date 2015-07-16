@@ -73,8 +73,8 @@
          pptOutput.close();
          fis.close();
           %>
-    <h1>PowerPoint Download</h1>
-    Slides available At <a href="<%=downloadPath + "slides" + today.toString()+".pptx"%>">this link</a>. <br>
+    <h2>PowerPoint Download</h2>
+    <a href="<%=downloadPath + "slides" + today.toString()+".pptx"%>">Click here</a> to download your slides. <br>
       <%
 
         }catch(Exception ex) {

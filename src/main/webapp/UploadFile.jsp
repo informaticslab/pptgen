@@ -82,13 +82,17 @@
 
         fi.write(file) ;
   %>
-  <h1>Image check</h1>
-  <h2> Please confirm the image you've uploaded</h2>
+  <h2>Image check</h2>
+  Please confirm the image you've uploaded
   <img src="<%=imagePath+fileName%>"/>
-  <h2> Please enter an image caption to get your PPT file</h2>
+  <br />
+  <br />
+  Please enter an image caption to get your PPT file
+  <br />
   <form action="UploadCaption.jsp" method="post">
     <input type="hidden" name="file" value="<%=fileName%>" />
     Caption: <input type="text" name="caption" value ="Caption"/>
+    <br />
     <br />
     <input type="submit" value="Generate PPTX" class="upload-file"/>
   </form>
