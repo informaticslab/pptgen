@@ -43,13 +43,16 @@
        XMLSlideShow ppt = new XMLSlideShow();
        XSLFSlideMaster master = ppt.getSlideMasters()[0];
 
-       XSLFSlideLayout layout1 = master.getLayout(SlideLayout.TITLE);
+       XSLFSlideLayout layout1 = master.getLayout(SlideLayout.PIC_TX);
        XSLFSlide slide1 = ppt.createSlide(layout1) ;
        XSLFTextShape[] ph1 = slide1.getPlaceholders();
        XSLFTextShape titlePlaceholder1 = ph1[0];
-       titlePlaceholder1.setText("");
+       //titlePlaceholder1.setText("This is a picture of an alarm clock");
+       slide1.removeShape(titlePlaceholder1);
        XSLFTextShape subtitlePlaceholder1 = ph1[1];
-       subtitlePlaceholder1.setText("this is an image of an alarm clock");
+       slide1.removeShape(subtitlePlaceholder1);
+         XSLFTextShape thirdBlock = ph1[2];
+         thirdBlock.setText("This may well be a caption");
 
 
 
@@ -61,9 +64,10 @@
 
          int pictureIndex = ppt.addPicture(data, XSLFPictureData.PICTURE_TYPE_PNG);
 
-	        /*XSLFPictureShape shape =*/ slide1.createPicture(pictureIndex);
+	        XSLFPictureShape shape = slide1.createPicture(pictureIndex);
            java.util.Date today = new java.util.Date();
-         subtitlePlaceholder1.setText(caption);
+         //subtitlePlaceholder1.setText(caption);
+           thirdBlock.setText(caption);
 
          File pptFile;
          pptFile = new File(filePath + "slides"+today.toString()+".pptx");
