@@ -12,7 +12,7 @@
 <i>Please select a file to upload.</i> <br /><br />
 <form action="UploadFile.jsp" method="post"
       enctype="multipart/form-data">
-    <input type="file" name="file" size="50" class="custom-file-input" />
+    <input type="file" name="file" size="50" class="custom-file-input" required/>
     <br />
     <br />
     <input type="submit" value="Upload File" class="upload-file"/>
